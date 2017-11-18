@@ -157,12 +157,13 @@ jQuery(function ($) {
     $("#error-mail-msg").hide();
     $("#success-mail-msg").hide();
     $(".pulse").hide();
+    $("#ajax-error-mail-msg").hide();
 
     $('#sendEmail').click(function(event){
 
         $("#error-mail-msg").hide();
         $("#success-mail-msg").hide();
-
+        $("#ajax-error-mail-msg").hide();
         $(".pulse").show();
         var errMsg = "";
 
@@ -194,17 +195,16 @@ jQuery(function ($) {
         }
 
        $.post('rest', {
-    	   name: mailArgs.name,
-		   email: mailArgs.email,
-		   subject: mailArgs.subject,
-		   message: mailArgs.message,
-   		
+			name: mailArgs.name,
+			email: mailArgs.email,
+			subject: mailArgs.subject,
+			message: mailArgs.message,
 	   	}, function() {
-           $("#success-mail-msg").show();
-           $(".pulse").hide();
+			$("#success-mail-msg").show();
+			$(".pulse").hide();
 	   	}).fail(function(response) {
-           alert('Error: ' + response.responseText);
-           $(".pulse").hide();
+			$("#ajax-error-mail-msg").show();
+			$(".pulse").hide();
        });
         
     });
@@ -284,11 +284,8 @@ jQuery(function ($) {
 function showWineInfo (args) {
 	$('#' + args.wineType).hide();
 	$('#' + args.wineType + "-info").show();
-
-	
-	//$('#' + args.wineType + "-info").delay(20300).fadeOut('slow');
-
-	//$('#' + args.wineType).delay(21000).fadeIn('slow');
+	/*$('#' + args.wineType + "-info").delay(20300).fadeOut('slow');
+	$('#' + args.wineType).delay(21000).fadeIn('slow');*/
 }
 
 function hideWineInfo (args) {
