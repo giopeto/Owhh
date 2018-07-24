@@ -1,5 +1,6 @@
-Old Wine House Hristovi site
+Owhh web site
 =============================
 
-Link: [oldwinehousehristovi.appspot.com](http://oldwinehousehristovi.appspot.com/)
+Run locally with maven
 
+mvn appengine:devserver

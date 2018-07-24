@@ -9,8 +9,5 @@
         <module name="Owhh" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Owhh" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>

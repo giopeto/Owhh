@@ -296,3 +296,18 @@ function hideWineInfo (args) {
 
 $('.info').hide();
 
+
+function getWines(){
+
+    $.get('rest',
+        {},
+        function() {
+            $("#success-mail-msg").show();
+            $(".pulse").hide();
+        }).fail(function(response) {
+            //$("#ajax-error-mail-msg").show();
+            //$(".pulse").hide();
+   });
+}
+
+getWines();
