@@ -2,8 +2,6 @@ package owhh;
 
 import java.io.IOException;
 
-
-
 import javax.mail.internet.MimeUtility;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
