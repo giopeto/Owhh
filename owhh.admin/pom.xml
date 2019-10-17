@@ -8,17 +8,25 @@
 		<version>2.1.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.appspot</groupId>
 	<artifactId>owhh.admin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>Owhh Admin</name>
 	<description>Old Wine House Hristovi Admin Application</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<appengine.target.version>1.9.37</appengine.target.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-1.0-sdk</artifactId>
+			<version>${appengine.target.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -34,6 +42,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -61,11 +75,12 @@
 
 	<build>
 		<plugins>
+			<!-- add appengine-maven-plugin -->
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>appengine-maven-plugin</artifactId>
+				<version>1.3.1</version>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
